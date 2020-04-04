@@ -20,5 +20,10 @@ namespace Cw3.DAL
         {
             return _students;
         }
+
+        public string GetStudentEnrollment(string StudentId)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

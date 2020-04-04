@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 using Cw3.DAL;
 using Cw3.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
+using System.Data.SqlClient;
 
 namespace Cw3.Controllers
 {
@@ -24,15 +25,12 @@ namespace Cw3.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetStudent(int id)
+        public IActionResult GetStudent(string id)
         {
-            if (id == 1)
+            string returnString = _dbService.GetStudentEnrollment(id);
+            if (returnString != null)
             {
-                return Ok("Kowalski");
-            }
-            else if (id == 2)
-            {
-                return Ok("Malewski");
+                return Ok(returnString);
             }
 
             return NotFound("Nie znaleziono studenta");
