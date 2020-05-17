@@ -1,0 +1,33 @@
+LOG: 
+Path: /api/enrollments/
+Method: POST
+Query: 
+Body: {
+"IndexNumber": "s1242",
+"FirstName": "Test",
+"LastName": "Test",
+"BirthDate": "22.05.1998",
+"Studies": "mba"
+}
+LOG: 
+Path: /api/enrollments/
+Method: POST
+Query: 
+Body: {
+"IndexNumber": "s1242",
+"FirstName": "Test",
+"LastName": "Test",
+"BirthDate": "22.05.1998",
+"Studies": "mba"
+}
+LOG: 
+Path: /api/enrollments/
+Method: POST
+Query: 
+Body: {
+"IndexNumber": "s1242",
+"FirstName": "Test",
+"LastName": "Test",
+"BirthDate": "22.05.1998",
+"Studies": "mba"
+}

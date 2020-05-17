@@ -176,5 +176,31 @@ namespace Cw3.Services
 
             return response;
         }
+        
+        public Student GetStudent(string index)
+        {
+            using var con = new SqlConnection(ConStr);
+            using var com = new SqlCommand
+            {
+                Connection = con,
+                CommandText = "SELECT IndexNumber, FirstName, LastName, BirthDate, IdEnrollment " +
+                              "FROM Student WHERE IndexNumber=@IndexNum"
+            };
+
+            com.Parameters.AddWithValue("IndexNum", index);
+            con.Open();
+
+            var student = new Student();
+
+            var executeReader = com.ExecuteReader();
+            if (!executeReader.Read()) return null;
+                
+            student.IndexNumber = index;
+            student.FirstName = executeReader["FirstName"].ToString();
+            student.LastName = executeReader["LastName"].ToString();
+            student.BirthDate= DateTime.ParseExact(executeReader["BirthDate"].ToString(), "dd.MM.yyyy", null);
+            student.Studies = executeReader["IdEnrollment"].ToString();
+            return student;
+        }
     }
 }

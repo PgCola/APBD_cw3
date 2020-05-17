@@ -1,3 +1,4 @@
+using Cw3.Models;
 using Cw3.Requests;
 using Cw3.Responses;
 
@@ -8,5 +9,7 @@ namespace Cw3.Services
         EnrollStudentResponse EnrollStudent(EnrollStudentRequest request);
         
         PromoteStudentResponse PromoteStudents(PromoteStudentRequest request);
+
+        Student GetStudent(string index);
     }
 }
